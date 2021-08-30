@@ -16,7 +16,7 @@ module.exports = (settings) => {
   );
 
   objects.push(
-    ...oc.processDeploymentTemplate(`${templatesLocalBaseUrl}/client/bc.yaml`, {
+    ...oc.processDeploymentTemplate(`${templatesLocalBaseUrl}/client-build-config.yaml`, {
       param: {
         NAME: `${phases[phase].name}-client`,
         SUFFIX: phases[phase].suffix,
