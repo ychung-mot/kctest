@@ -58,7 +58,7 @@ objects:
           uri: ${SOURCE_REPOSITORY_URL}
           ref: ${SOURCE_REPOSITORY_REF}
         type: Git
-        contextDir: client
+        contextDir: my-app
       strategy:
         dockerStrategy:
           noCache: true

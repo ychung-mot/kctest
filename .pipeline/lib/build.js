@@ -16,14 +16,15 @@ module.exports = (settings) => {
   );
 
   objects.push(
-    ...oc.processDeploymentTemplate(`${templatesLocalBaseUrl}/client/bc.yaml`, {
+    ...oc.processDeploymentTemplate(`${templatesLocalBaseUrl}/client-build-config.yaml`, {
       param: {
-        NAME: `${phases[phase].name}-client`,
-        SUFFIX: phases[phase].suffix,
-        VERSION: phases[phase].tag,
-        GIT_URL: oc.git.url,
-        GIT_BRANCH: oc.git.branch.name,
-      },
+        PROJECT_NAME: `${phases[phase].name}`,
+        NAME: `${settings.phases[phase].name}-client`,
+        SUFFIX: settings.phases[phase].suffix,
+        VERSION: settings.phases[phase].tag,
+        SOURCE_REPOSITORY_URL: `${oc.git.uri}`,
+        SOURCE_REPOSITORY_REF: `${oc.git.branch_ref}`,
+    },
     })
   );
 
