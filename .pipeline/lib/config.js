@@ -15,6 +15,7 @@ const phases = {
     instance: `${name}-build-${changeId}`,
     version: `${version}-${changeId}`,
     tag: `build-${version}-${changeId}`,
+    transient: true,
   },
   dev: {
     namespace: "e0cee6-dev",
@@ -25,6 +26,10 @@ const phases = {
     instance: `${name}-dev-${changeId}`,
     version: `${version}-${changeId}`,
     tag: `dev-${version}-${changeId}`,
+    host: `kctest-${changeId}-e0cee6-dev.apps.silver.devops.gov.bc.ca`,
+    transient: true,
+    client_cpu: "100m",
+    client_memory: "100Mi",    
   },
   test: {
     namespace: "e0cee6-test",
@@ -35,6 +40,9 @@ const phases = {
     instance: `${name}-test`,
     version: `${version}`,
     tag: `test-${version}`,
+    host: `kctest-e0cee6-test.apps.silver.devops.gov.bc.ca`,
+    client_cpu: "100m",
+    client_memory: "100Mi",  
   },
 };
 
